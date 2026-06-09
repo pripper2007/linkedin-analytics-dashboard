@@ -1,0 +1,1 @@
+ALTER TABLE "profile_snapshots" ALTER COLUMN "total_followers" DROP NOT NULL;

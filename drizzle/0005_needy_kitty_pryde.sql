@@ -1,0 +1,1 @@
+ALTER TABLE "posts" ADD COLUMN "id_resolve_attempted_at" timestamp with time zone;

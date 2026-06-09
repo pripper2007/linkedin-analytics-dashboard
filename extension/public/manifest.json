@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Analytics (personal)",
+  "version": "0.1.0",
+  "description": "Captures analytics from your own LinkedIn session and POSTs to your personal dashboard. Sideloaded, not published.",
+  "permissions": ["storage", "alarms", "tabs"],
+  "host_permissions": [
+    "*://www.linkedin.com/*",
+    "http://localhost:3003/*",
+    "http://localhost:3000/*",
+    "https://*.vercel.app/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "classic"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.linkedin.com/*"],
+      "js": ["injected-interceptor.js"],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": false
+    },
+    {
+      "matches": ["*://www.linkedin.com/*"],
+      "js": ["content-script.js"],
+      "run_at": "document_start",
+      "world": "ISOLATED",
+      "all_frames": false
+    }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  }
+}

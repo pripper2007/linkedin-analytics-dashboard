@@ -1,0 +1,1 @@
+ALTER TABLE "profile_snapshots" ADD COLUMN "total_connections" integer;

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>LinkedIn Analytics — Settings</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      }
+      body {
+        max-width: 540px;
+        margin: 24px auto;
+        padding: 0 16px;
+      }
+      h1 { font-size: 18px; margin-bottom: 4px; }
+      p.lede { opacity: 0.75; margin-top: 0; }
+      label { display: block; margin-top: 14px; font-weight: 600; font-size: 13px; }
+      input[type='text'],
+      input[type='password'] {
+        width: 100%;
+        padding: 8px 10px;
+        font: inherit;
+        border: 1px solid rgba(0,0,0,0.2);
+        border-radius: 6px;
+        box-sizing: border-box;
+      }
+      .row { display: flex; gap: 12px; align-items: center; margin-top: 14px; }
+      button {
+        font: inherit;
+        padding: 8px 14px;
+        border-radius: 6px;
+        border: 1px solid rgba(0,0,0,0.2);
+        background: #f7f7f7;
+        cursor: pointer;
+      }
+      button.primary { background: #0a66c2; color: #fff; border-color: #0a66c2; }
+      #status {
+        margin-top: 20px;
+        padding: 12px;
+        border-radius: 6px;
+        background: rgba(0,0,0,0.04);
+        font-size: 13px;
+        white-space: pre-wrap;
+      }
+      #status strong { display: inline-block; min-width: 120px; }
+    </style>
+  </head>
+  <body>
+    <h1>LinkedIn Analytics extension</h1>
+    <p class="lede">Personal capture of your own LinkedIn post analytics.</p>
+
+    <label for="url">Ingest URL</label>
+    <input id="url" type="text" placeholder="http://localhost:3003/api/ingest/" />
+
+    <label for="secret">Ingest secret</label>
+    <input id="secret" type="password" placeholder="matches INGEST_SECRET on the server" />
+
+    <label for="profileUrl">Your LinkedIn profile URL</label>
+    <input id="profileUrl" type="text" placeholder="https://www.linkedin.com/in/&lt;vanity&gt;/" />
+
+    <div class="row">
+      <label style="margin: 0;">
+        <input id="enabled" type="checkbox" /> Enabled
+      </label>
+      <button id="save">Save</button>
+      <button id="ingest" class="primary">Ingest now</button>
+      <button id="backfill">Backfill now</button>
+      <button id="stopBackfill">Stop backfill</button>
+      <button id="resolveIds">Resolve legacy IDs</button>
+      <button id="stopResolver">Stop resolver</button>
+      <button id="exportMisses">Export parser misses</button>
+      <button id="exportDemoMisses">Export demographic misses</button>
+      <button id="exportDemoDetailMisses">Export detail-page misses</button>
+      <button id="exportTickLog">Export tick log</button>
+      <button id="exportFingerprints">Export fingerprints</button>
+      <button id="probePost">Probe activity ID…</button>
+    </div>
+
+    <div id="status">Loading…</div>
+
+    <script src="options.js"></script>
+  </body>
+</html>

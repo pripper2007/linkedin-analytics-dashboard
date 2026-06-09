@@ -1,0 +1,26 @@
+node_modules/
+.next/
+out/
+.env
+.env*.local
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
+.vercel
+coverage/
+extension/dist/
+
+# Local agent / editor scratch.
+.claude/
+
+# ALL LinkedIn data is personal and contains PII (connections, emails, phone
+# numbers, login IPs, private messages, payment receipts). The entire `data/`
+# directory stays local — never commit any of it. Your own data fills the DB
+# at runtime via the extension + the manual imports on /data-health.
+data/
+
+# Fixture captures from LinkedIn — contain your content, activity IDs,
+# demographics, and cookies in some cases. Kept local for parser tests;
+# not for the repo.
+extension/test/fixtures/*.html
+extension/test/fixtures/*.json
